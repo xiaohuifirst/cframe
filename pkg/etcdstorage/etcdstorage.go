@@ -13,9 +13,11 @@ type Etcd struct {
 	cli *clientv3.Client
 }
 
-func NewEtcd(endpoints []string) *Etcd {
+func NewEtcd(endpoints []string, userName, passwd string) *Etcd {
 	cfg := clientv3.Config{
 		Endpoints: endpoints,
+		Username:  userName,
+		Password:  passwd,
 	}
 
 	conn, err := clientv3.New(cfg)

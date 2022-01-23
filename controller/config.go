@@ -10,6 +10,8 @@ import (
 type Config struct {
 	ListenAddr     string   `toml:"listen_addr"`
 	Etcd           []string `toml:"etcd"`
+	EtcdUser       string   `toml:"etcd_user"`
+	EtcdPasswd     string   `toml:"etcd_passwd"`
 	MongoUrl       string   `toml:"mongourl"`
 	DBName         string   `toml:"dbname"`
 	UserCenterAddr string   `toml:"usercenter_addr"`

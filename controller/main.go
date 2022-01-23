@@ -24,7 +24,7 @@ func main() {
 	log.Debug("%v", conf)
 
 	// create etcd storage
-	store := etcdstorage.NewEtcd(conf.Etcd)
+	store := etcdstorage.NewEtcd(conf.Etcd, conf.EtcdUser, conf.EtcdPasswd)
 
 	// create edge manager
 	edgeManager := models.NewEdgeManager(store)

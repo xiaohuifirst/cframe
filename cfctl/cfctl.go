@@ -15,7 +15,10 @@ func main() {
 		endpoints = strings.Split(envendpoints, ",")
 	}
 
-	store := etcdstorage.NewEtcd(endpoints)
+	userName := os.Getenv("ETCD_USER")
+	passWord := os.Getenv("ETCD_PASSWORD")
+
+	store := etcdstorage.NewEtcd(endpoints, userName, passWord)
 
 	app := cli.NewApp()
 	app.Usage = "cfctl manage namespace/edge of cframe"
